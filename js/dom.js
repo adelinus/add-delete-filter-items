@@ -13,11 +13,12 @@ filter.addEventListener("keyup", filterItems);
 
 function addItem(e) {
   e.preventDefault();
-  let newItem = document.getElementById("item").value;
+  let textInput = document.getElementById("item");
+  let newItemVal = textInput.value;
 
   let li = document.createElement("li");
   li.className = "list-group-item";
-  li.innerText = newItem;
+  li.innerText = newItemVal;
 
   let deleteBtn = document.createElement("button");
   deleteBtn.className = "btn btn-danger btn-sm float-right delete";
@@ -26,6 +27,8 @@ function addItem(e) {
   li.appendChild(deleteBtn);
 
   itemList.appendChild(li);
+
+  textInput.value = "";
 }
 
 function removeItem(e) {
